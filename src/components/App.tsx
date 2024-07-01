@@ -1,5 +1,8 @@
 import React from 'react';
 import * as classes from './App.module.scss'
+import {Link, Outlet} from "react-router-dom";
+import WomanPng from '@/assets/woman.png'
+import Calendar from '@/assets/calendar.svg'
 
 export const App = () => {
     const [count, setCount] = React.useState<number>(0);
@@ -7,8 +10,18 @@ export const App = () => {
     const increment = () => setCount(prev => prev + 1);
     return (
         <div>
+            <div>
+                <img width={100} height={100} src={WomanPng} alt=""/>
+            </div>
+            <div>
+                <Calendar style={{color: 'green'}} width={50} height={50}  />
+            </div>
+            <Link to={'/about'}>about</Link>
+            <br />
+            <Link to={'/shop'}>shop</Link>
             <h1>{count}</h1>
             <button className={classes.button} type="button" onClick={increment}>button</button>
+            <Outlet />
         </div>
     );
 };
