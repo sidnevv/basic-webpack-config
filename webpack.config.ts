@@ -12,7 +12,7 @@ interface Env {
 
 export default (env: Env) => {
     const paths: BuildPaths = {
-        output: path.resolve(__dirname, "dist"),
+        dist: path.resolve(__dirname, "dist"),
         entry: path.resolve(__dirname, "src", "index.tsx"),
         html: path.resolve(__dirname, "public", "index.html"),
         src: path.resolve(__dirname, "src"),

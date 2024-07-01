@@ -1,7 +1,7 @@
 export interface BuildPaths {
     entry: string
     html: string
-    output: string
+    dist: string
     src: string
     public: string
 }

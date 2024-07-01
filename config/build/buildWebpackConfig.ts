@@ -15,7 +15,7 @@ export function buildWebpackConfig(options: BuildOptions): webpack.Configuration
         entry: paths.entry,
         output:
             {
-                path: paths.output,
+                path: paths.dist,
                 filename: "[name].[contenthash].js",
                 clean: true
             },
