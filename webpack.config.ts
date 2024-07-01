@@ -4,9 +4,10 @@ import {buildWebpackConfig} from "./config/build/buildWebpackConfig";
 import {BuildPaths} from "./config/build/types/types";
 
 interface Env {
-    mode: 'development' | 'production';
-    port: number;
-    analyzer?: boolean
+    mode?: 'development' | 'production';
+    port?: number;
+    analyzer?: boolean;
+    platform?: 'mobile' | 'desktop'
 }
 
 export default (env: Env) => {
@@ -17,12 +18,11 @@ export default (env: Env) => {
         src: path.resolve(__dirname, "src"),
     }
 
-    const config: webpack.Configuration = buildWebpackConfig({
+    return buildWebpackConfig({
         port: env.port ?? 3000,
         mode: env.mode ?? 'development',
         paths,
-        analyzer: env.analyzer
+        analyzer: env.analyzer ?? false,
+        platform: env.platform ?? 'desktop'
     })
-
-    return config
 }

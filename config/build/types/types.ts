@@ -10,4 +10,5 @@ export interface BuildOptions {
     paths: BuildPaths
     mode: 'development' | 'production';
     analyzer?: boolean
+    platform: 'mobile' | 'desktop'
 }
